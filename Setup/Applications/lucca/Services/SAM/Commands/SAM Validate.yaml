@@ -1,0 +1,9 @@
+harnessApiVersion: '1.0'
+type: VERIFY
+commandUnitType: COMMAND
+commandUnits:
+- commandUnitType: EXEC
+  deploymentType: SSH
+  name: Exec
+  scriptType: BASH
+targetToAllEnv: true

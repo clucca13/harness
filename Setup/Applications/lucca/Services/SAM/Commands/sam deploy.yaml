@@ -1,0 +1,10 @@
+harnessApiVersion: '1.0'
+type: INSTALL
+commandUnitType: COMMAND
+commandUnits:
+- command: sam deploy --template-file samtemplate.yaml --s3bucket stardev-deploys-us-east-1 --stack-name "${service.name}-TAG --capabilities CAPABILITY_NAMED_IAM CAPABILITY_AUTO_EXPAND --no-fail-on-empty-changeset --region "us-east-1"
+  commandUnitType: EXEC
+  deploymentType: SSH
+  name: Exec
+  scriptType: BASH
+targetToAllEnv: true

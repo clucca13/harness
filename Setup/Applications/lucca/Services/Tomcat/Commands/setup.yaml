@@ -1,0 +1,63 @@
+harnessApiVersion: '1.0'
+type: SETUP
+commandUnitType: COMMAND
+commandUnits:
+- command: |2-
+
+    # Execute as root and pass environment variables
+    # su -p -
+
+    # Execute as root via user credentials (with root privileges)
+    # sudo -E su -p -
+
+    # The following variables are absolute paths defined as:
+    # ${HOME}/${appName}/${serviceName}/${serviceTemplateName}/[runtime|backup|staging]
+
+    mkdir -p "$WINGS_RUNTIME_PATH"
+    mkdir -p "$WINGS_BACKUP_PATH"
+    mkdir -p "$WINGS_STAGING_PATH"
+  commandUnitType: SETUP_ENV
+  deploymentType: SSH
+  name: Setup Env
+  scriptType: BASH
+- command: ' cp -R /home/admin/tomcat /home/admin/lucca/Tomcat/dev/runtime/.'
+  commandUnitType: EXEC
+  deploymentType: SSH
+  name: Download Tomcat
+  scriptType: BASH
+  workingDirectory: .
+- artifactVariableName: artifact
+  commandUnitType: DOWNLOAD_ARTIFACT
+  deploymentType: SSH
+  name: Download Artifact
+  scriptType: BASH
+  workingDirectory: ${app.defaults.RUNTIME_PATH}/tomcat/webapps
+- commandUnitType: COMMAND
+  name: Stop
+- commandUnitType: COPY_CONFIGS
+  deploymentType: SSH
+  destinationParentPath: $WINGS_RUNTIME_PATH/configs
+  name: Copy Configs
+- command: |-
+    export appname=${app.name}
+    export servicename=${service.name}
+    export env=${env.name}
+    for f in *.xml; do
+            cp $f $f.harness
+            envsubst < $f.harness | tee $f
+            rm $f.harness
+    done
+  commandUnitType: EXEC
+  deploymentType: SSH
+  name: Swap Values
+  scriptType: BASH
+  workingDirectory: ${WINGS_RUNTIME_PATH}
+- command: cat *.xml
+  commandUnitType: EXEC
+  deploymentType: SSH
+  name: cat xml
+  scriptType: BASH
+  workingDirectory: ${WINGS_RUNTIME_PATH}
+- commandUnitType: COMMAND
+  name: Start
+targetToAllEnv: true

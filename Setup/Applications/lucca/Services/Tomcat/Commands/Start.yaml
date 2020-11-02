@@ -1,0 +1,8 @@
+harnessApiVersion: '1.0'
+type: START
+commandUnitType: COMMAND
+targetToAllEnv: true
+templateUri: Harness SE/Tomcat Commands/Start:latest
+templateVariables:
+- name: RuntimePath
+  value: ${WINGS_RUNTIME_PATH}

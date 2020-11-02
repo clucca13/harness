@@ -1,0 +1,8 @@
+harnessApiVersion: '1.0'
+type: CONFIG_FILE
+checksum: Id/nW5Nwa2ic69Brg5HScw==
+checksumType: MD5
+encrypted: false
+fileName: log4j2.xml
+targetFilePath: log4j2.xml
+targetToAllEnv: true

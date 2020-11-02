@@ -1,0 +1,8 @@
+harnessApiVersion: '1.0'
+type: ARTIFACTORY
+artifactPattern: '*/*.war'
+metadataOnly: true
+repositoryName: example-repo-local
+repositoryType: any
+serverName: cluccaArtifactory
+useDockerFormat: false

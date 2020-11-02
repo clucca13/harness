@@ -1,0 +1,10 @@
+harnessApiVersion: '1.0'
+type: OTHER
+commandUnitType: COMMAND
+commandUnits:
+- command: sam package --s3 bucket "${service.name}-deploys-us-east-1" --s3-prefix "${service.name}/$(aws iam get-user -query 'User.UserName' --output text)" --output-template-file samtemplate.yaml
+  commandUnitType: EXEC
+  deploymentType: SSH
+  name: Exec
+  scriptType: BASH
+targetToAllEnv: true

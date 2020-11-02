@@ -1,0 +1,8 @@
+harnessApiVersion: '1.0'
+type: CONFIG_FILE
+checksum: OBUBhilWKoy5ZUdgvA6Ung==
+checksumType: MD5
+encrypted: false
+fileName: template.yaml
+targetFilePath: template.yaml
+targetToAllEnv: true

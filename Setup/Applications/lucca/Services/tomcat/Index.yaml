@@ -1,0 +1,9 @@
+harnessApiVersion: '1.0'
+type: SERVICE
+applicationStack: Standard Tomcat 7
+artifactType: WAR
+configVariables:
+- name: log4jlevel
+  value: DEBUG
+  valueType: TEXT
+deploymentType: SSH
