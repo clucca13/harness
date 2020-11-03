@@ -18,6 +18,23 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: clucca-k8-dev
+- type: ENV_STATE
+  name: k8s-cjl
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 2
+  workflowName: k8s-cjl
+  workflowVariables:
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: ${env}
+  - entityType: SERVICE
+    name: Service
+    value: ${service}
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_KUBERNETES
+    value: ${infra}
 tags:
   ${workflow.variables.tests}: ''
   ${workflow.variables.wfvar}: ''
