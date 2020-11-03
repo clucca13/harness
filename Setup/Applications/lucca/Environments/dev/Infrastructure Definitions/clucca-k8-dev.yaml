@@ -7,3 +7,8 @@ infrastructure:
   cloudProviderName: clucca-kubernetes
   namespace: ${app.name}-${env.name}
   releaseName: release-${infra.kubernetes.infraId}
+scopedServices:
+- k8
+- k9
+- nginx-git
+- generic-k8
