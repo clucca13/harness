@@ -6,7 +6,7 @@ pipelineStages:
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
-  stageName: STAGE 1
+  stageName: STAGE 2
   workflowName: test
   workflowVariables:
   - entityType: ENVIRONMENT
@@ -20,7 +20,7 @@ pipelineStages:
     value: se-gke-cluster
 - type: ENV_STATE
   name: test-1
-  parallel: false
+  parallel: true
   skipCondition:
     type: DO_NOT_SKIP
   stageName: STAGE 2
