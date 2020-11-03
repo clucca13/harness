@@ -2,25 +2,8 @@ harnessApiVersion: '1.0'
 type: PIPELINE
 pipelineStages:
 - type: ENV_STATE
-  name: test
-  parallel: false
-  skipCondition:
-    type: DO_NOT_SKIP
-  stageName: STAGE 2
-  workflowName: test
-  workflowVariables:
-  - entityType: ENVIRONMENT
-    name: Environment
-    value: dev
-  - entityType: SERVICE
-    name: Service
-    value: k8
-  - entityType: INFRASTRUCTURE_DEFINITION
-    name: InfraDefinition_KUBERNETES
-    value: se-gke-cluster
-- type: ENV_STATE
   name: test-1
-  parallel: true
+  parallel: false
   skipCondition:
     type: DO_NOT_SKIP
   stageName: STAGE 2
