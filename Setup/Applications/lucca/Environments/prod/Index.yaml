@@ -2,7 +2,3 @@ harnessApiVersion: '1.0'
 type: ENVIRONMENT
 configMapYamlByServiceTemplateName: {}
 environmentType: PROD
-variableOverrides:
-- name: foo
-  value: bar2
-  valueType: TEXT
