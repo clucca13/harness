@@ -3,6 +3,10 @@ type: ENVIRONMENT
 configMapYamlByServiceTemplateName: {}
 environmentType: NON_PROD
 variableOverrides:
+- name: JAVA_HOME
+  serviceName: Tomcat
+  value: /lib/tmp
+  valueType: TEXT
 - name: HELLO
   serviceName: Tomcat
   value: HI
