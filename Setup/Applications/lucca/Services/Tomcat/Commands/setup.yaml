@@ -31,7 +31,7 @@ commandUnits:
   deploymentType: SSH
   name: Download Artifact
   scriptType: BASH
-  workingDirectory: ${app.defaults.RUNTIME_PATH}/tomcat/webapps
+  workingDirectory: ${app.defaults.RUNTIME_PATH}
 - commandUnitType: COMMAND
   name: Stop
 - commandUnitType: COPY_CONFIGS
