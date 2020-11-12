@@ -60,7 +60,7 @@ phases:
   computeProviderName: clucca
   daemonSet: false
   infraDefinitionName: awsDebian8
-  name: Phase 2
+  name: Install Java
   phaseSteps:
   - type: INFRASTRUCTURE_NODE
     name: Prepare Infra
@@ -99,7 +99,7 @@ phases:
   computeProviderName: clucca
   daemonSet: false
   infraDefinitionName: awsDebian8
-  name: Phase 3
+  name: Deploy War
   phaseSteps:
   - type: INFRASTRUCTURE_NODE
     name: Prepare Infra
@@ -175,86 +175,5 @@ rollbackPhases:
     stepsInParallel: false
   provisionNodes: false
   serviceName: tomcatServer
-  statefulSet: false
-- type: SSH
-  computeProviderName: clucca
-  daemonSet: false
-  infraDefinitionName: awsDebian8
-  name: Rollback Phase 2
-  phaseNameForRollback: Phase 2
-  phaseSteps:
-  - type: DISABLE_SERVICE
-    name: Disable Service
-    phaseStepNameForRollback: Enable Service
-    statusForRollback: SUCCESS
-    stepsInParallel: false
-  - type: STOP_SERVICE
-    name: Stop Service
-    phaseStepNameForRollback: Deploy Service
-    statusForRollback: SUCCESS
-    stepsInParallel: false
-  - type: DEPLOY_SERVICE
-    name: Deploy Service
-    phaseStepNameForRollback: Deploy Service
-    statusForRollback: SUCCESS
-    stepsInParallel: false
-  - type: ENABLE_SERVICE
-    name: Enable Service
-    phaseStepNameForRollback: Disable Service
-    statusForRollback: SUCCESS
-    stepsInParallel: false
-  - type: VERIFY_SERVICE
-    name: Verify Service
-    phaseStepNameForRollback: Deploy Service
-    statusForRollback: SUCCESS
-    stepsInParallel: false
-  - type: WRAP_UP
-    name: Wrap Up
-    stepsInParallel: false
-  provisionNodes: false
-  serviceName: java
-  statefulSet: false
-- type: SSH
-  computeProviderName: clucca
-  daemonSet: false
-  infraDefinitionName: awsDebian8
-  name: Rollback Phase 3
-  phaseNameForRollback: Phase 3
-  phaseSteps:
-  - type: DISABLE_SERVICE
-    name: Disable Service
-    phaseStepNameForRollback: Enable Service
-    statusForRollback: SUCCESS
-    stepsInParallel: false
-  - type: STOP_SERVICE
-    name: Stop Service
-    phaseStepNameForRollback: Deploy Service
-    statusForRollback: SUCCESS
-    steps:
-    - type: COMMAND
-      name: Stop
-      properties:
-        commandName: Stop
-    stepsInParallel: false
-  - type: DEPLOY_SERVICE
-    name: Deploy Service
-    phaseStepNameForRollback: Deploy Service
-    statusForRollback: SUCCESS
-    stepsInParallel: false
-  - type: ENABLE_SERVICE
-    name: Enable Service
-    phaseStepNameForRollback: Disable Service
-    statusForRollback: SUCCESS
-    stepsInParallel: false
-  - type: VERIFY_SERVICE
-    name: Verify Service
-    phaseStepNameForRollback: Deploy Service
-    statusForRollback: SUCCESS
-    stepsInParallel: false
-  - type: WRAP_UP
-    name: Wrap Up
-    stepsInParallel: false
-  provisionNodes: false
-  serviceName: Tomcat
   statefulSet: false
 templatized: false
