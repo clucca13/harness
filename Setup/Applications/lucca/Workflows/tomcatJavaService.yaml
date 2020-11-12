@@ -72,9 +72,13 @@ phases:
     - type: DC_NODE_SELECT
       name: Select Nodes
       properties:
-        excludeSelectedHostsFromFuturePhases: true
+        excludeSelectedHostsFromFuturePhases: false
         instanceCount: 1
+        instanceUnitType: COUNT
         specificHosts: false
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     stepsInParallel: false
   - type: DISABLE_SERVICE
     name: Disable Service
