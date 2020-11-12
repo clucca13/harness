@@ -4,5 +4,5 @@ configMapYamlByServiceTemplateName: {}
 environmentType: PROD
 variableOverrides:
 - name: foo
-  value: bar
+  value: bar2
   valueType: TEXT
