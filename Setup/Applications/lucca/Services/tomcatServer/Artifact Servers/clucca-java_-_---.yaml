@@ -2,7 +2,7 @@ harnessApiVersion: '1.0'
 type: ARTIFACTORY
 artifactPattern: ./*.*
 metadataOnly: true
-repositoryName: clucca-java
+repositoryName: clucca-tomcat
 repositoryType: any
 serverName: cluccaArtifactory
 useDockerFormat: false
