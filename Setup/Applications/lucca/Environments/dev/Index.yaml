@@ -5,7 +5,7 @@ environmentType: NON_PROD
 variableOverrides:
 - name: JAVA_HOME
   serviceName: Tomcat
-  value: /lib/tmp
+  value: /lib/tmp2
   valueType: TEXT
 - name: HELLO
   serviceName: Tomcat
