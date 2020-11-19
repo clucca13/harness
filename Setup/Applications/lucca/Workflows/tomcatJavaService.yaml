@@ -60,6 +60,14 @@ phases:
   provisionNodes: false
   serviceName: tomcatServer
   statefulSet: false
+  templateExpressions:
+  - expression: ${InfraDefinition_SSH}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: artifactType
+      value: OTHER
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
 - type: SSH
   computeProviderName: clucca
   daemonSet: false
@@ -103,6 +111,14 @@ phases:
   provisionNodes: false
   serviceName: java
   statefulSet: false
+  templateExpressions:
+  - expression: ${InfraDefinition_SSH2}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: artifactType
+      value: OTHER
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
 - type: SSH
   computeProviderName: clucca
   daemonSet: false
@@ -146,6 +162,14 @@ phases:
   provisionNodes: false
   serviceName: Tomcat
   statefulSet: false
+  templateExpressions:
+  - expression: ${InfraDefinition_SSH3}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: artifactType
+      value: OTHER
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
 preDeploymentSteps:
 - type: ARTIFACT_CHECK
   name: Artifact Check
@@ -188,4 +212,40 @@ rollbackPhases:
   provisionNodes: false
   serviceName: tomcatServer
   statefulSet: false
-templatized: false
+  templateExpressions:
+  - expression: ${InfraDefinition_SSH}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: artifactType
+      value: OTHER
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
+templateExpressions:
+- expression: ${Environment}
+  fieldName: envId
+  metadata:
+  - name: relatedField
+  - name: entityType
+    value: ENVIRONMENT
+templatized: true
+userVariables:
+- type: ENTITY
+  description: Variable for Environment entity
+  fixed: false
+  mandatory: true
+  name: Environment
+- type: ENTITY
+  description: Variable for Infrastructure Definition entity in Rollback Install Tomcat
+  fixed: false
+  mandatory: true
+  name: InfraDefinition_SSH
+- type: ENTITY
+  description: Variable for Infrastructure Definition entity in Install Java
+  fixed: false
+  mandatory: true
+  name: InfraDefinition_SSH2
+- type: ENTITY
+  description: Variable for Infrastructure Definition entity in Deploy War
+  fixed: false
+  mandatory: true
+  name: InfraDefinition_SSH3
