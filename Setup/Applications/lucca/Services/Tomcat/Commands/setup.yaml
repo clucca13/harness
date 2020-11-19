@@ -58,6 +58,4 @@ commandUnits:
   name: Exec-2
   scriptType: BASH
   workingDirectory: Start Tomcat
-- commandUnitType: COMMAND
-  name: Start
 targetToAllEnv: true
