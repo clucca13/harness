@@ -52,12 +52,6 @@ commandUnits:
   name: Swap Values
   scriptType: BASH
   workingDirectory: ${WINGS_RUNTIME_PATH}
-- command: cat *.xml
-  commandUnitType: EXEC
-  deploymentType: SSH
-  name: cat xml
-  scriptType: BASH
-  workingDirectory: ${WINGS_RUNTIME_PATH}
 - commandUnitType: COMMAND
   name: Start
 targetToAllEnv: true
