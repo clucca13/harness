@@ -10,7 +10,7 @@ pipelineStages:
   workflowName: deployTomcatServer
 - type: ENV_STATE
   name: deployJVM
-  parallel: false
+  parallel: true
   skipCondition:
     type: DO_NOT_SKIP
   stageName: STAGE 2
