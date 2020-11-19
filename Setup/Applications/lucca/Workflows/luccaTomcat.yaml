@@ -113,4 +113,9 @@ userVariables:
   allowedValues: 8,9,10
   fixed: false
   mandatory: true
-  name: javaversion
+  name: javaVersion
+- type: TEXT
+  allowedValues: 7,8,9,10
+  fixed: false
+  mandatory: true
+  name: tomcatVersion
