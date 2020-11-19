@@ -93,11 +93,6 @@ phases:
     stepsInParallel: false
   - type: DEPLOY_SERVICE
     name: Deploy Service
-    steps:
-    - type: COMMAND
-      name: Install Tomcat
-      properties:
-        commandName: Install Tomcat
     stepsInParallel: false
   - type: ENABLE_SERVICE
     name: Enable Service
