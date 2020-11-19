@@ -9,6 +9,13 @@ pipelineStages:
   stageName: STAGE 2
   workflowName: deployTomcatServer
 - type: ENV_STATE
+  name: deployJVM
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 2
+  workflowName: deployJVM
+- type: ENV_STATE
   name: luccaTomcat
   parallel: false
   skipCondition:
