@@ -55,7 +55,6 @@ commandUnits:
 - command: ./startup.sh
   commandUnitType: EXEC
   deploymentType: SSH
-  name: Exec-2
+  name: Start Tomcat
   scriptType: BASH
-  workingDirectory: Start Tomcat
 targetToAllEnv: true
