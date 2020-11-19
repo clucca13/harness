@@ -51,6 +51,15 @@ phases:
   provisionNodes: false
   serviceName: java
   statefulSet: false
+  templateExpressions:
+  - expression: ${Service}
+    fieldName: serviceId
+    metadata:
+    - name: relatedField
+    - name: artifactType
+      value: OTHER
+    - name: entityType
+      value: SERVICE
 preDeploymentSteps:
 - type: ARTIFACT_CHECK
   name: Artifact Check
@@ -93,4 +102,28 @@ rollbackPhases:
   provisionNodes: false
   serviceName: java
   statefulSet: false
-templatized: false
+  templateExpressions:
+  - expression: ${Service}
+    fieldName: serviceId
+    metadata:
+    - name: relatedField
+    - name: artifactType
+      value: OTHER
+    - name: entityType
+      value: SERVICE
+templateExpressions:
+- expression: ${Service}
+  fieldName: serviceId
+  metadata:
+  - name: relatedField
+  - name: artifactType
+    value: OTHER
+  - name: entityType
+    value: SERVICE
+templatized: true
+userVariables:
+- type: ENTITY
+  description: Variable for Service entity
+  fixed: false
+  mandatory: true
+  name: Service
