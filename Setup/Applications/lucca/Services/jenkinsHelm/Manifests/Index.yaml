@@ -1,6 +1,6 @@
 harnessApiVersion: '1.0'
 type: APPLICATION_MANIFEST
 helmChartConfig:
-  chartName: jenkins
+  chartName: jenkins-2.18.0.tgz
   connectorName: jenkinsHelm
 storeType: HelmChartRepo
