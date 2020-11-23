@@ -29,7 +29,7 @@ phases:
     - type: DC_NODE_SELECT
       name: Select Nodes
       properties:
-        excludeSelectedHostsFromFuturePhases: true
+        excludeSelectedHostsFromFuturePhases: false
         hostNames:
         - ec2-3-137-203-254.us-east-2.compute.amazonaws.com
         specificHosts: true
