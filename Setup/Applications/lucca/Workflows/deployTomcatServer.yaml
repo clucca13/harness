@@ -43,21 +43,6 @@ phases:
   - type: DEPLOY_SERVICE
     name: Deploy Service
     steps:
-    - type: SHELL_SCRIPT
-      name: Liquibase
-      properties:
-        commandPath: null
-        connectionAttributes: null
-        delegateSelectors: null
-        executeOnDelegate: true
-        host: null
-        publishAsVar: false
-        sshKeyRef: null
-        sweepingOutputName: null
-        sweepingOutputScope: null
-        templateExpressions: null
-        timeoutMillis: 600000
-      templateUri: Harness SE/Liquibase:latest
     - type: COMMAND
       name: Install Tomcat
       properties:
