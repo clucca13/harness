@@ -43,6 +43,10 @@ phases:
   - type: DEPLOY_SERVICE
     name: Deploy Service
     steps:
+    - type: COMMAND
+      name: setup
+      properties:
+        commandName: setup
     - type: SHELL_SCRIPT
       name: Liquibase
       properties:
@@ -58,10 +62,6 @@ phases:
         templateExpressions: null
         timeoutMillis: 600000
       templateUri: Harness SE/Liquibase:latest
-    - type: COMMAND
-      name: setup
-      properties:
-        commandName: setup
     stepsInParallel: false
   - type: ENABLE_SERVICE
     name: Enable Service
