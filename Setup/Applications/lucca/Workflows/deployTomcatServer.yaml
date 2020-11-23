@@ -29,7 +29,7 @@ phases:
     - type: DC_NODE_SELECT
       name: Select Nodes
       properties:
-        excludeSelectedHostsFromFuturePhases: false
+        excludeSelectedHostsFromFuturePhases: true
         instanceCount: 1
         instanceUnitType: COUNT
         specificHosts: false
