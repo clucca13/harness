@@ -43,6 +43,12 @@ phases:
       name: Install Tomcat
       properties:
         commandName: Install Tomcat
+    - type: SHELL_SCRIPT
+      name: Liquibase
+      properties:
+        executeOnDelegate: true
+        timeoutMillis: 600000
+      templateUri: Harness SE/Liquibase:latest
     stepsInParallel: false
   - type: ENABLE_SERVICE
     name: Enable Service
