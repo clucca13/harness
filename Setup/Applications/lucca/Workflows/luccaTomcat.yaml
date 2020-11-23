@@ -107,15 +107,4 @@ rollbackPhases:
   provisionNodes: false
   serviceName: Tomcat
   statefulSet: false
-templatized: true
-userVariables:
-- type: TEXT
-  allowedValues: 8,9,10
-  fixed: false
-  mandatory: true
-  name: javaVersion
-- type: TEXT
-  allowedValues: 7,8,9,10
-  fixed: false
-  mandatory: true
-  name: tomcatVersion
+templatized: false
