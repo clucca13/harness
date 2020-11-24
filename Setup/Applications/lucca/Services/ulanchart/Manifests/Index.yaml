@@ -1,7 +1,7 @@
 harnessApiVersion: '1.0'
 type: APPLICATION_MANIFEST
 helmChartConfig:
-  chartName: bitnami//jenkins
+  chartName: bitnami/jenkins
   chartVersion: 2.19.0
   connectorName: ulanhelm
 storeType: HelmChartRepo
