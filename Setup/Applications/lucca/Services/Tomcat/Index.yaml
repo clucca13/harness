@@ -11,7 +11,4 @@ configVariables:
 - name: log4jlevel
   value: debug
   valueType: TEXT
-- name: port
-  value: '8080'
-  valueType: TEXT
 deploymentType: SSH
