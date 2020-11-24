@@ -20,16 +20,6 @@ commandUnits:
   deploymentType: SSH
   name: Setup Env
   scriptType: BASH
-- command: |-
-    export LIQUIBASE_HOME=/home/admin
-    export JAVA_HOME=/home/admin/jdk1.8.0_131/
-    cd /home/admin/examples/sql
-    /home/admin/liquibase update
-  commandUnitType: EXEC
-  deploymentType: SSH
-  name: Liquibase
-  scriptType: BASH
-  workingDirectory: .
 - artifactVariableName: artifact
   commandUnitType: DOWNLOAD_ARTIFACT
   deploymentType: SSH
