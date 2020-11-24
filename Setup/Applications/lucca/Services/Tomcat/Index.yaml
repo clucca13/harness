@@ -2,6 +2,9 @@ harnessApiVersion: '1.0'
 type: SERVICE
 artifactType: OTHER
 configVariables:
+- name: port
+  value: '8080'
+  valueType: TEXT
 - name: CATALINA_HOME
   value: /home/admin/tomcat
   valueType: TEXT
