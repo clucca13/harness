@@ -10,4 +10,6 @@ commandUnits:
   name: Json to Environment Variables
 - commandUnitType: COMMAND
   name: Install IIS Website
+- commandUnitType: COMMAND
+  name: Stop
 targetToAllEnv: true
