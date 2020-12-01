@@ -3,6 +3,8 @@ type: INSTALL
 commandUnitType: COMMAND
 commandUnits:
 - commandUnitType: COMMAND
+  name: Stop
+- commandUnitType: COMMAND
   name: Start
 - commandUnitType: COMMAND
   name: liquibase
@@ -10,6 +12,4 @@ commandUnits:
   name: Json to Environment Variables
 - commandUnitType: COMMAND
   name: Install IIS Website
-- commandUnitType: COMMAND
-  name: Stop
 targetToAllEnv: true
