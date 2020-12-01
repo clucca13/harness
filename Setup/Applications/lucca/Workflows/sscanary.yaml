@@ -21,7 +21,7 @@ phases:
   computeProviderName: gke-se-cluster-playground
   daemonSet: false
   infraDefinitionName: se-gke-cluster
-  name: Canary
+  name: Deploy Customer Apps
   phaseSteps:
   - type: K8S_PHASE_STEP
     name: Deploy
@@ -97,8 +97,8 @@ rollbackPhases:
   computeProviderName: gke-se-cluster-playground
   daemonSet: false
   infraDefinitionName: se-gke-cluster
-  name: Rollback Canary
-  phaseNameForRollback: Canary
+  name: Rollback Deploy Customer Apps
+  phaseNameForRollback: Deploy Customer Apps
   phaseSteps:
   - type: K8S_PHASE_STEP
     name: Deploy
@@ -173,12 +173,12 @@ userVariables:
   mandatory: true
   name: Environment
 - type: ENTITY
-  description: Variable for Service entity in Rollback Canary
+  description: Variable for Service entity in Rollback Deploy Customer Apps
   fixed: false
   mandatory: true
   name: Service
 - type: ENTITY
-  description: Variable for Infrastructure Definition entity in Rollback Canary
+  description: Variable for Infrastructure Definition entity in Rollback Deploy Customer Apps
   fixed: false
   mandatory: true
   name: InfraDefinition_Kubernetes
