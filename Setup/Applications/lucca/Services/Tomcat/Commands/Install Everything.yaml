@@ -5,11 +5,11 @@ commandUnits:
 - commandUnitType: COMMAND
   name: Stop
 - commandUnitType: COMMAND
-  name: Start
-- commandUnitType: COMMAND
   name: liquibase
 - commandUnitType: COMMAND
   name: Json to Environment Variables
 - commandUnitType: COMMAND
   name: Install IIS Website
+- commandUnitType: COMMAND
+  name: Start
 targetToAllEnv: true
