@@ -138,6 +138,13 @@ rollbackPhases:
     - name: entityType
       value: INFRASTRUCTURE_DEFINITION
 templateExpressions:
+- expression: ${Environment}
+  fieldName: envId
+  metadata:
+  - name: relatedField
+    value: ${InfraDefinition_SSH}
+  - name: entityType
+    value: ENVIRONMENT
 - expression: ${Service}
   fieldName: serviceId
   metadata:
@@ -146,13 +153,6 @@ templateExpressions:
     value: OTHER
   - name: entityType
     value: SERVICE
-- expression: ${Environment}
-  fieldName: envId
-  metadata:
-  - name: relatedField
-    value: ${InfraDefinition_SSH}
-  - name: entityType
-    value: ENVIRONMENT
 - expression: ${InfraDefinition_SSH}
   fieldName: infraDefinitionId
   metadata:
