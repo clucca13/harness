@@ -8,4 +8,6 @@ commandUnits:
   name: liquibase
 - commandUnitType: COMMAND
   name: Json to Environment Variables
+- commandUnitType: COMMAND
+  name: Install IIS Website
 targetToAllEnv: true
