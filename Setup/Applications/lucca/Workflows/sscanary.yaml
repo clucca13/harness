@@ -67,7 +67,7 @@ phases:
   computeProviderName: gke-se-cluster-playground
   daemonSet: false
   infraDefinitionName: se-gke-cluster
-  name: Primary
+  name: Deploy Base Application
   phaseSteps:
   - type: K8S_PHASE_STEP
     name: Deploy
@@ -132,8 +132,8 @@ rollbackPhases:
   computeProviderName: gke-se-cluster-playground
   daemonSet: false
   infraDefinitionName: se-gke-cluster
-  name: Rollback Primary
-  phaseNameForRollback: Primary
+  name: Rollback Deploy Base Application
+  phaseNameForRollback: Deploy Base Application
   phaseSteps:
   - type: K8S_PHASE_STEP
     name: Deploy
@@ -183,7 +183,7 @@ userVariables:
   mandatory: true
   name: InfraDefinition_Kubernetes
 - type: ENTITY
-  description: Variable for Infrastructure Definition entity in Rollback Primary
+  description: Variable for Infrastructure Definition entity in Rollback Deploy Base Application
   fixed: false
   mandatory: true
   name: InfraDefinition_Kubernetes2
