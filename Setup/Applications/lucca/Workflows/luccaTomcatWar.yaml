@@ -146,6 +146,13 @@ templateExpressions:
     value: OTHER
   - name: entityType
     value: SERVICE
+- expression: ${Environment}
+  fieldName: envId
+  metadata:
+  - name: relatedField
+    value: ${InfraDefinition_SSH}
+  - name: entityType
+    value: ENVIRONMENT
 - expression: ${InfraDefinition_SSH}
   fieldName: infraDefinitionId
   metadata:
@@ -154,6 +161,11 @@ templateExpressions:
     value: INFRASTRUCTURE_DEFINITION
 templatized: true
 userVariables:
+- type: ENTITY
+  description: Variable for Environment entity
+  fixed: false
+  mandatory: true
+  name: Environment
 - type: ENTITY
   description: Variable for Service entity
   fixed: false
