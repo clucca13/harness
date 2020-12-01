@@ -1,4 +1,7 @@
 harnessApiVersion: '1.0'
 type: INSTALL
 commandUnitType: COMMAND
+commandUnits:
+- commandUnitType: COMMAND
+  name: Start
 targetToAllEnv: true
