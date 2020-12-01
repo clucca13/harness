@@ -6,4 +6,6 @@ commandUnits:
   name: Start
 - commandUnitType: COMMAND
   name: liquibase
+- commandUnitType: COMMAND
+  name: Json to Environment Variables
 targetToAllEnv: true
