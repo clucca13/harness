@@ -1,9 +1,3 @@
 harnessApiVersion: '1.0'
 type: APPLICATION_MANIFEST
-gitFileConfig:
-  branch: master
-  connectorName: clucca13-harness
-  filePath: nginx-deployment.yaml
-  useBranch: true
-  useInlineServiceDefinition: false
-storeType: Remote
+storeType: Local
