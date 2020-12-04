@@ -46,8 +46,7 @@ commandUnits:
   name: Swap Values
   scriptType: BASH
   workingDirectory: ${WINGS_RUNTIME_PATH}
-- command: |
-    ./startup.sh
+- command: ./catalina.sh run
   commandUnitType: EXEC
   deploymentType: SSH
   name: Start Tomcat
