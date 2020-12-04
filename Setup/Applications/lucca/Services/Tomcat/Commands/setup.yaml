@@ -46,7 +46,9 @@ commandUnits:
   name: Swap Values
   scriptType: BASH
   workingDirectory: ${WINGS_RUNTIME_PATH}
-- command: ./catalina.sh run
+- command: |-
+    JAVA_HOME=/home/admin/jdk1.8.0_131
+    ./catalina.sh run
   commandUnitType: EXEC
   deploymentType: SSH
   name: Start Tomcat
