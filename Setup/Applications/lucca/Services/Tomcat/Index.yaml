@@ -2,6 +2,9 @@ harnessApiVersion: '1.0'
 type: SERVICE
 artifactType: OTHER
 configVariables:
+- name: JRE_HOME
+  value: /home/admin/jdk1.8.0_131
+  valueType: TEXT
 - name: port
   value: '8080'
   valueType: TEXT
