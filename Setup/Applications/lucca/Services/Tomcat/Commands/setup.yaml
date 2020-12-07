@@ -46,7 +46,7 @@ commandUnits:
   name: Swap Values
   scriptType: BASH
   workingDirectory: ${WINGS_RUNTIME_PATH}
-- command: nohup ./startup.sh > ${service.name}.log &
+- command: ./startup.sh
   commandUnitType: EXEC
   deploymentType: SSH
   name: Start Tomcat
