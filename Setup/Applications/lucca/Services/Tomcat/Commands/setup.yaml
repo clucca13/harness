@@ -46,10 +46,4 @@ commandUnits:
   name: Swap Values
   scriptType: BASH
   workingDirectory: ${WINGS_RUNTIME_PATH}
-- command: ./startup.sh
-  commandUnitType: EXEC
-  deploymentType: SSH
-  name: Start Tomcat
-  scriptType: BASH
-  workingDirectory: ${RuntimePath}/tomcat/bin
 targetToAllEnv: true
