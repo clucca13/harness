@@ -6,7 +6,7 @@ configVariables:
   value: '8080'
   valueType: TEXT
 - name: JAVA_HOME
-  value: /home/admin/jdk1.8.0_131
+  value: /tmp/lib2
   valueType: TEXT
 - name: log4jlevel
   value: debug
