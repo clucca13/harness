@@ -29,10 +29,10 @@ phases:
     - type: DC_NODE_SELECT
       name: Select Nodes
       properties:
-        excludeSelectedHostsFromFuturePhases: false
-        hostNames:
-        - ec2-3-137-203-254.us-east-2.compute.amazonaws.com
-        specificHosts: true
+        excludeSelectedHostsFromFuturePhases: true
+        instanceCount: 50
+        instanceUnitType: PERCENTAGE
+        specificHosts: false
         templateUuid: null
         templateVariables: null
         templateVersion: null
@@ -105,10 +105,6 @@ rollbackPhases:
       name: Download Artifacts
       properties:
         commandName: Download Artifacts
-    - type: COMMAND
-      name: Install_2
-      properties:
-        commandName: Install
     stepsInParallel: false
   - type: ENABLE_SERVICE
     name: Enable Service
