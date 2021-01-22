@@ -47,10 +47,6 @@ phases:
       name: setup
       properties:
         commandName: setup
-    - type: COMMAND
-      name: Install_2
-      properties:
-        commandName: Install
     stepsInParallel: false
   - type: ENABLE_SERVICE
     name: Enable Service
