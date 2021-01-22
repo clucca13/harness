@@ -53,17 +53,6 @@ phases:
     stepsInParallel: false
   - type: VERIFY_SERVICE
     name: Verify Service
-    steps:
-    - type: HTTP
-      name: Health Check
-      properties:
-        executeWithPreviousSteps: false
-        timeoutMillis: 0
-      templateUri: Harness SE/HTTP Verifications/Health Check:latest
-      templateVariables:
-      - name: Url
-      - name: ResponseCode
-        value: '200'
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
