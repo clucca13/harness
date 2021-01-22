@@ -105,6 +105,10 @@ rollbackPhases:
       name: Download Artifacts
       properties:
         commandName: Download Artifacts
+    - type: COMMAND
+      name: Install_2
+      properties:
+        commandName: Install
     stepsInParallel: false
   - type: ENABLE_SERVICE
     name: Enable Service
