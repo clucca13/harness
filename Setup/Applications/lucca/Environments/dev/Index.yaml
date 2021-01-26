@@ -4,6 +4,10 @@ configMapYamlByServiceTemplateName: {}
 environmentType: NON_PROD
 variableOverrides:
 - name: port
+  serviceName: tomcatLuccaStateStreet
+  value: '443'
+  valueType: TEXT
+- name: port
   serviceName: Tomcat
   value: '8080'
   valueType: TEXT
