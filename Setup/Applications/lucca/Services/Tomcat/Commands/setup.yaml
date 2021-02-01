@@ -49,7 +49,7 @@ commandUnits:
 - command: ./startup.sh
   commandUnitType: EXEC
   deploymentType: SSH
-  name: Exec-1
+  name: Start Tomcat
   scriptType: BASH
   workingDirectory: ' ${RuntimePath}/tomcat/bin'
 targetToAllEnv: true
