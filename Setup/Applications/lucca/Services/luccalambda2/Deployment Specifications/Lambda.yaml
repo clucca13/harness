@@ -1,0 +1,12 @@
+harnessApiVersion: '1.0'
+type: AWS_LAMBDA
+defaults:
+  memorySize: 384
+  runtime: nodejs10.x
+  timeout: 3
+functions:
+- functionName: ${app.name}_${service.name}_${env.name}
+  handler: lucca
+  memorySize: 128
+  runtime: nodejs10.x
+  timeout: 3
