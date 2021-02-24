@@ -30,8 +30,8 @@ phases:
       name: Select Nodes
       properties:
         excludeSelectedHostsFromFuturePhases: true
-        instanceCount: 1
-        instanceUnitType: COUNT
+        instanceCount: 50
+        instanceUnitType: PERCENTAGE
         specificHosts: false
         templateUuid: null
         templateVariables: null
