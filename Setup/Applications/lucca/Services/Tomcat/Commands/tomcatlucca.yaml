@@ -5,6 +5,7 @@ targetToAllEnv: true
 templateUri: Harness SE/tomcatlucca:latest
 templateVariables:
 - name: RuntimePath
+  value: /tomcat/bin
 - name: BackupPath
 - name: StagingPath
 - name: TomcatBinaryName
