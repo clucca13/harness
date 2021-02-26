@@ -1,8 +1,0 @@
-harnessApiVersion: '1.0'
-type: START
-commandUnitType: COMMAND
-targetToAllEnv: true
-templateUri: Harness SE/Generic Commands/Json to Environment Variables:latest
-templateVariables:
-- name: RuntimePath
-- name: ArtifactFileName
