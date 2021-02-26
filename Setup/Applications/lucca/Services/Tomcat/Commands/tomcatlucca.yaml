@@ -1,0 +1,10 @@
+harnessApiVersion: '1.0'
+type: OTHER
+commandUnitType: COMMAND
+targetToAllEnv: true
+templateUri: Harness SE/tomcatlucca:latest
+templateVariables:
+- name: RuntimePath
+- name: BackupPath
+- name: StagingPath
+- name: TomcatBinaryName
