@@ -1,0 +1,8 @@
+harnessApiVersion: '1.0'
+type: SERVICE
+artifactType: WAR
+configVariables:
+- name: port
+  value: '80'
+  valueType: TEXT
+deploymentType: SSH

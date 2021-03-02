@@ -30,9 +30,9 @@ phases:
       name: Select Nodes
       properties:
         excludeSelectedHostsFromFuturePhases: true
-        hostNames:
-        - ec2-3-137-203-254.us-east-2.compute.amazonaws.com
-        specificHosts: true
+        instanceCount: 100
+        instanceUnitType: PERCENTAGE
+        specificHosts: false
         templateUuid: null
         templateVariables: null
         templateVersion: null
@@ -44,9 +44,9 @@ phases:
     name: Deploy Service
     steps:
     - type: COMMAND
-      name: setup
+      name: Install Tomcat
       properties:
-        commandName: setup
+        commandName: Install Tomcat
     stepsInParallel: false
   - type: ENABLE_SERVICE
     name: Enable Service
@@ -58,7 +58,7 @@ phases:
     name: Wrap Up
     stepsInParallel: false
   provisionNodes: false
-  serviceName: Tomcat
+  serviceName: tomcatServer
   statefulSet: false
 preDeploymentSteps:
 - type: ARTIFACT_CHECK
@@ -85,11 +85,6 @@ rollbackPhases:
     name: Deploy Service
     phaseStepNameForRollback: Deploy Service
     statusForRollback: SUCCESS
-    steps:
-    - type: COMMAND
-      name: Download Artifacts
-      properties:
-        commandName: Download Artifacts
     stepsInParallel: false
   - type: ENABLE_SERVICE
     name: Enable Service
@@ -105,6 +100,6 @@ rollbackPhases:
     name: Wrap Up
     stepsInParallel: false
   provisionNodes: false
-  serviceName: Tomcat
+  serviceName: tomcatServer
   statefulSet: false
 templatized: false

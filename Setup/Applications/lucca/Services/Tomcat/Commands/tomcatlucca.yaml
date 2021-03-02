@@ -1,14 +1,11 @@
 harnessApiVersion: '1.0'
-type: INSTALL
+type: OTHER
 commandUnitType: COMMAND
 targetToAllEnv: true
-templateUri: Harness SE/Tomcat Commands/Install:latest
+templateUri: Harness SE/tomcatlucca:latest
 templateVariables:
 - name: RuntimePath
-  value: runtime
+  value: /tomcat/bin
 - name: BackupPath
-  value: backup
 - name: StagingPath
-  value: staging
 - name: TomcatBinaryName
-  value: Hardened Tomcat 8

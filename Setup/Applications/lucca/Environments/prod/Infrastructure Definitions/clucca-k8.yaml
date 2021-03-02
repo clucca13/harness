@@ -5,5 +5,5 @@ deploymentType: KUBERNETES
 infrastructure:
 - type: DIRECT_KUBERNETES
   cloudProviderName: clucca-kubernetes
-  namespace: ${app.name}.${env.name}
+  namespace: ${app.name}-${env.name}
   releaseName: release-${infra.kubernetes.infraId}

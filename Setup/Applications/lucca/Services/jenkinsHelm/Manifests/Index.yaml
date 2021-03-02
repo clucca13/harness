@@ -1,0 +1,7 @@
+harnessApiVersion: '1.0'
+type: APPLICATION_MANIFEST
+helmChartConfig:
+  chartName: jenkins
+  chartVersion: 2.18.0
+  connectorName: jenkinsHelm
+storeType: HelmChartRepo

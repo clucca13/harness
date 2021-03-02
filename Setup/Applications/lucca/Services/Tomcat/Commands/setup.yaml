@@ -20,18 +20,12 @@ commandUnits:
   deploymentType: SSH
   name: Setup Env
   scriptType: BASH
-- command: ' cp -R /home/admin/tomcat /home/admin/lucca/Tomcat/dev/runtime/.'
-  commandUnitType: EXEC
-  deploymentType: SSH
-  name: Download Tomcat
-  scriptType: BASH
-  workingDirectory: .
 - artifactVariableName: artifact
   commandUnitType: DOWNLOAD_ARTIFACT
   deploymentType: SSH
   name: Download Artifact
   scriptType: BASH
-  workingDirectory: ${app.defaults.RUNTIME_PATH}/tomcat/webapps
+  workingDirectory: ${app.defaults.RUNTIME_PATH}
 - commandUnitType: COMMAND
   name: Stop
 - commandUnitType: COPY_CONFIGS
@@ -52,12 +46,10 @@ commandUnits:
   name: Swap Values
   scriptType: BASH
   workingDirectory: ${WINGS_RUNTIME_PATH}
-- command: cat *.xml
+- command: ./startup.sh
   commandUnitType: EXEC
   deploymentType: SSH
-  name: cat xml
+  name: Start Tomcat
   scriptType: BASH
-  workingDirectory: ${WINGS_RUNTIME_PATH}
-- commandUnitType: COMMAND
-  name: Start
+  workingDirectory: ' ${RuntimePath}/tomcat/bin'
 targetToAllEnv: true

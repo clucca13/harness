@@ -20,7 +20,7 @@ phases:
 - type: SSH
   computeProviderName: clucca
   daemonSet: false
-  infraDefinitionName: luccaSSH
+  infraDefinitionName: awsDebian8
   name: Phase 1
   phaseSteps:
   - type: INFRASTRUCTURE_NODE
@@ -29,9 +29,13 @@ phases:
     - type: DC_NODE_SELECT
       name: Select Nodes
       properties:
-        excludeSelectedHostsFromFuturePhases: true
-        instanceCount: 1
+        excludeSelectedHostsFromFuturePhases: false
+        instanceCount: 100
+        instanceUnitType: PERCENTAGE
         specificHosts: false
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     stepsInParallel: false
   - type: DISABLE_SERVICE
     name: Disable Service
@@ -40,29 +44,9 @@ phases:
     name: Deploy Service
     steps:
     - type: COMMAND
-      name: downloadArtifacts
+      name: setup
       properties:
-        commandName: downloadArtifacts
-    - type: SHELL_SCRIPT
-      name: Shell Script
-      properties:
-        commandPath: null
-        connectionAttributes: null
-        executeOnDelegate: true
-        host: null
-        outputVars: ''
-        publishAsVar: false
-        scriptString: echo hello
-        scriptType: BASH
-        sshKeyRef: null
-        sweepingOutputName: null
-        sweepingOutputScope: null
-        tags: null
-        templateExpressions: null
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        timeoutMillis: 60000
+        commandName: setup
     stepsInParallel: false
   - type: ENABLE_SERVICE
     name: Enable Service
@@ -74,8 +58,23 @@ phases:
     name: Wrap Up
     stepsInParallel: false
   provisionNodes: false
-  serviceName: luccaScopeTest
+  serviceName: Tomcat
   statefulSet: false
+  templateExpressions:
+  - expression: ${Service}
+    fieldName: serviceId
+    metadata:
+    - name: relatedField
+    - name: artifactType
+      value: OTHER
+    - name: entityType
+      value: SERVICE
+  - expression: ${InfraDefinition_SSH}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: relatedField
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
 preDeploymentSteps:
 - type: ARTIFACT_CHECK
   name: Artifact Check
@@ -83,7 +82,7 @@ rollbackPhases:
 - type: SSH
   computeProviderName: clucca
   daemonSet: false
-  infraDefinitionName: luccaSSH
+  infraDefinitionName: awsDebian8
   name: Rollback Phase 1
   phaseNameForRollback: Phase 1
   phaseSteps:
@@ -103,9 +102,9 @@ rollbackPhases:
     statusForRollback: SUCCESS
     steps:
     - type: COMMAND
-      name: Install
+      name: Download Artifacts
       properties:
-        commandName: Install
+        commandName: Download Artifacts
     stepsInParallel: false
   - type: ENABLE_SERVICE
     name: Enable Service
@@ -121,6 +120,59 @@ rollbackPhases:
     name: Wrap Up
     stepsInParallel: false
   provisionNodes: false
-  serviceName: luccaScopeTest
+  serviceName: Tomcat
   statefulSet: false
-templatized: false
+  templateExpressions:
+  - expression: ${Service}
+    fieldName: serviceId
+    metadata:
+    - name: relatedField
+    - name: artifactType
+      value: OTHER
+    - name: entityType
+      value: SERVICE
+  - expression: ${InfraDefinition_SSH}
+    fieldName: infraDefinitionId
+    metadata:
+    - name: relatedField
+    - name: entityType
+      value: INFRASTRUCTURE_DEFINITION
+templateExpressions:
+- expression: ${Environment}
+  fieldName: envId
+  metadata:
+  - name: relatedField
+    value: ${InfraDefinition_SSH}
+  - name: entityType
+    value: ENVIRONMENT
+- expression: ${Service}
+  fieldName: serviceId
+  metadata:
+  - name: relatedField
+  - name: artifactType
+    value: OTHER
+  - name: entityType
+    value: SERVICE
+- expression: ${InfraDefinition_SSH}
+  fieldName: infraDefinitionId
+  metadata:
+  - name: relatedField
+  - name: entityType
+    value: INFRASTRUCTURE_DEFINITION
+templatized: true
+userVariables:
+- type: ENTITY
+  description: Variable for Environment entity
+  fixed: false
+  mandatory: true
+  name: Environment
+- type: ENTITY
+  description: Variable for Service entity
+  fixed: false
+  mandatory: true
+  name: Service
+- type: ENTITY
+  description: Variable for Infrastructure Definition entity
+  fixed: false
+  mandatory: true
+  name: InfraDefinition_SSH

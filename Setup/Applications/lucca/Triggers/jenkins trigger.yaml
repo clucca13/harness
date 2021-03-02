@@ -1,0 +1,12 @@
+harnessApiVersion: '1.0'
+type: TRIGGER
+artifactSelections:
+- artifactStreamName: clucca-java_-_---
+  regex: false
+  serviceName: tomcatServer
+  type: WEBHOOK_VARIABLE
+continueWithDefaultValues: false
+executionName: deployTomcatServer
+executionType: Workflow
+triggerCondition:
+- type: WEBHOOK
