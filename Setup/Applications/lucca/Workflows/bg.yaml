@@ -37,7 +37,7 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: false
-        scriptString: kubectl get service/servicename -o jsonpath='{.spec.clusterIP}'
+        scriptString: kubectl get service/nginx -o jsonpath='{.spec.clusterIP}'
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
