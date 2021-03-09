@@ -37,7 +37,9 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: false
-        scriptString: kubectl
+        scriptString: |-
+          EXTERNAL_IP=`kubectl get service/servicename -o jsonpath='{.spec.clusterIP}'`
+          curl -s http://$EXTERNAL_IP/version | grep nginx
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
