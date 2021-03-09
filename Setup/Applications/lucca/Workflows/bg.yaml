@@ -37,15 +37,15 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: false
-        scriptString: |-
-          EXTERNAL_IP=$(kubectl get svc nginx -o jsonpath="{.status.loadBalancer.ingress[*].ip}")
-          while true; do curl -s http://$EXTERNAL_IP/version | grep nginx; sleep 0.5; done
+        scriptString: kubectl
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 60000
     stepsInParallel: false
   - type: K8S_PHASE_STEP
