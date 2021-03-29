@@ -31,7 +31,7 @@ pipelineStages:
     value: newTomcatWar
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: clucca-k8-dev
+    value: ${variable-cluster}
 - type: ENV_STATE
   name: luccaTomcat
   parallel: false
