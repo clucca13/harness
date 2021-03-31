@@ -93,4 +93,6 @@ rollbackPhases:
   provisionNodes: false
   serviceName: brFiles
   statefulSet: false
+tags:
+  files: ${workflow.variables.files}
 templatized: false
