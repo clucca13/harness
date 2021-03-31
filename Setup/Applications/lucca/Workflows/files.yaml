@@ -95,4 +95,9 @@ rollbackPhases:
   statefulSet: false
 tags:
   files: ${workflow.variables.files}
-templatized: false
+templatized: true
+userVariables:
+- type: TEXT
+  fixed: false
+  mandatory: true
+  name: files
