@@ -2,5 +2,3 @@ harnessApiVersion: '1.0'
 type: SERVICE
 artifactType: OTHER
 deploymentType: SSH
-tags:
-  files: ''
