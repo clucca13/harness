@@ -38,6 +38,24 @@ phases:
     stepsInParallel: false
   - type: DEPLOY_SERVICE
     name: Deploy Service
+    steps:
+    - type: SHELL_SCRIPT
+      name: Shell Script
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        executeOnDelegate: true
+        host: null
+        outputVars: ''
+        publishAsVar: false
+        scriptString: echo ${artifact.fileName}
+        scriptType: BASH
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        templateVariables: ''
+        timeoutMillis: 60000
     stepsInParallel: false
   - type: ENABLE_SERVICE
     name: Enable Service
