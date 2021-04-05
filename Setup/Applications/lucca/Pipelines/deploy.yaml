@@ -6,7 +6,7 @@ pipelineStages:
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
-  stageName: dev
+  stageName: STAGE 1
   workflowName: ssk8workflow
   workflowVariables:
   - entityType: ENVIRONMENT
@@ -18,13 +18,20 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: se-gke-cluster
+- type: ENV_STATE
+  name: multi-servicetest
+  parallel: true
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 1
+  workflowName: multi-servicetest
 - type: APPROVAL
-  name: Approval 1
+  name: Approval 2
   parallel: false
   properties:
     userGroups:
     - Account Administrator
-    variables: null
+    workflowVariables: null
     stageName: STAGE 2
     timeoutMillis: 86400000
     approvalStateType: USER_GROUP
@@ -49,6 +56,23 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: clucca-k8
+- type: ENV_STATE
+  name: rollingtest
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 4
+  workflowName: rollingtest
+  workflowVariables:
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: dev9
+  - entityType: SERVICE
+    name: Service
+    value: websphere
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_KUBERNETES
+    value: clucca-k8-dev
 tags:
   ${workflow.variables.tests}: ''
   ${workflow.variables.wfvar}: ''
