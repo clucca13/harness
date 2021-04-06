@@ -2,30 +2,6 @@ harnessApiVersion: '1.0'
 type: PIPELINE
 pipelineStages:
 - type: ENV_STATE
-  name: deployJVM
-  parallel: false
-  skipCondition:
-    type: DO_NOT_SKIP
-  stageName: STAGE 1
-  workflowName: deployJVM
-- type: ENV_STATE
-  name: luccaRolling
-  parallel: true
-  skipCondition:
-    type: DO_NOT_SKIP
-  stageName: STAGE 1
-  workflowName: luccaRolling
-  workflowVariables:
-  - entityType: ENVIRONMENT
-    name: Environment
-    value: dev99
-  - entityType: SERVICE
-    name: Service
-    value: newTomcatWar
-  - entityType: INFRASTRUCTURE_DEFINITION
-    name: InfraDefinition_KUBERNETES
-    value: se-gke-cluster
-- type: ENV_STATE
   name: luccaTomcat
   parallel: false
   skipCondition:
