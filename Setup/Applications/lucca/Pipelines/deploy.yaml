@@ -2,23 +2,6 @@ harnessApiVersion: '1.0'
 type: PIPELINE
 pipelineStages:
 - type: ENV_STATE
-  name: ssk8workflow-1
-  parallel: false
-  skipCondition:
-    type: DO_NOT_SKIP
-  stageName: qa
-  workflowName: ssk8workflow
-  workflowVariables:
-  - entityType: ENVIRONMENT
-    name: Environment
-    value: prod
-  - entityType: SERVICE
-    name: Service
-    value: ssluccak8
-  - entityType: INFRASTRUCTURE_DEFINITION
-    name: InfraDefinition_KUBERNETES
-    value: clucca-k8
-- type: ENV_STATE
   name: rollingtest
   parallel: false
   skipCondition:
