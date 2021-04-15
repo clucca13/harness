@@ -37,7 +37,7 @@ phases:
         publishAsVar: false
         scriptString: |-
           export KUBECONFIG=${HARNESS_KUBE_CONFIG_PATH}
-          kubectl apply -f ${env.name}/nginx.yaml -n ${infra.kubernetes.namespace}
+          kubectl apply -f nginx.yaml -n ${infra.kubernetes.namespace}
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
