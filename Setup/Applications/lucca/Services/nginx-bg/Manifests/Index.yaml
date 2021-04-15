@@ -3,7 +3,7 @@ type: APPLICATION_MANIFEST
 gitFileConfig:
   branch: main
   connectorName: clucca-git-acount
-  filePath: dev/nginx.yaml
+  filePath: nginx.yaml
   repoName: k8s
   useBranch: true
   useInlineServiceDefinition: false
