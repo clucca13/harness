@@ -1,0 +1,10 @@
+harnessApiVersion: '1.0'
+type: APPLICATION_MANIFEST
+gitFileConfig:
+  branch: master
+  connectorName: clucca-git-acount
+  filePath: dev/nginx.yaml
+  repoName: k8s
+  useBranch: true
+  useInlineServiceDefinition: false
+storeType: Remote
