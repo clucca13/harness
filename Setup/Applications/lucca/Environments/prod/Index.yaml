@@ -3,6 +3,9 @@ type: ENVIRONMENT
 configMapYamlByServiceTemplateName: {}
 environmentType: PROD
 variableOverrides:
+- name: waspassword
+  value: gcpkms:wClNDvCKSMeWpFZQo8cfLA
+  valueType: ENCRYPTED_TEXT
 - name: log4jlevel
   serviceName: Tomcat
   value: debug
