@@ -1,9 +1,14 @@
 harnessApiVersion: '1.0'
 type: SERVICE
-applicationStack: Standard Tomcat 7
-artifactType: WAR
+artifactType: OTHER
 configVariables:
+- name: port
+  value: '8080'
+  valueType: TEXT
+- name: JAVA_HOME
+  value: /home/admin/jdk1.8.0_131/
+  valueType: TEXT
 - name: log4jlevel
-  value: DEBUG
+  value: debug
   valueType: TEXT
 deploymentType: SSH
