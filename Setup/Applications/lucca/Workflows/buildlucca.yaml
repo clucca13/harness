@@ -43,7 +43,7 @@ phases:
       name: Artifact Collection
       properties:
         artifactStreamName: library_nginx
-        buildNo: ''
+        buildNo: ${context.buildno.nginxBuildNo}
         entityType: SERVICE
         regex: false
         serviceName: nginx-bg
