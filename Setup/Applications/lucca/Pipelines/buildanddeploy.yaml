@@ -25,3 +25,20 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: se-gke-cluster
+- type: ENV_STATE
+  name: luccaRolling-1
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 3
+  workflowName: luccaRolling
+  workflowVariables:
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: dev1
+  - entityType: SERVICE
+    name: Service
+    value: k8SS
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_KUBERNETES
+    value: se-gke-cluster
