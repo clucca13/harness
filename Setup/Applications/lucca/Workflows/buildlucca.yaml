@@ -25,12 +25,13 @@ phases:
         connectionAttributes: null
         executeOnDelegate: true
         host: null
-        outputVars: ''
+        outputVars: nginxBuildNo,generick8BuildNo
         publishAsVar: true
         scriptString: |
           export nginxBuildNo=1.20.0-perl
           export generick8BuildNo=1.20.0
         scriptType: BASH
+        secretOutputVars: ''
         sshKeyRef: null
         sweepingOutputName: buildno
         sweepingOutputScope: PIPELINE
