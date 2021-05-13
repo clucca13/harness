@@ -30,6 +30,15 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 300000
+    - type: ARTIFACT_COLLECTION
+      name: Artifact Collection_2
+      properties:
+        artifactStreamName: clucca-tomcat_-
+        buildNo: ''
+        entityType: SERVICE
+        regex: false
+        serviceName: myapplication
+        timeoutMillis: 300000
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
