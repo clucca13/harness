@@ -39,6 +39,25 @@ phases:
         regex: false
         serviceName: myapplication
         timeoutMillis: 300000
+    - type: SHELL_SCRIPT
+      name: Shell Script
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        executeOnDelegate: true
+        host: null
+        outputVars: ''
+        publishAsVar: true
+        scriptString: |
+          nginxBuildNo=1.20.0-perl
+          generick8BuildNo=1.20.0
+        scriptType: BASH
+        sshKeyRef: null
+        sweepingOutputName: buildno
+        sweepingOutputScope: PIPELINE
+        templateExpressions: null
+        templateVariables: ''
+        timeoutMillis: 60000
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
