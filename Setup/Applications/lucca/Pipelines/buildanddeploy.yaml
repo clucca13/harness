@@ -8,3 +8,20 @@ pipelineStages:
     type: DO_NOT_SKIP
   stageName: STAGE 1
   workflowName: buildlucca
+- type: ENV_STATE
+  name: luccaRolling
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 2
+  workflowName: luccaRolling
+  workflowVariables:
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: dev1
+  - entityType: SERVICE
+    name: Service
+    value: nginx-bg
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_KUBERNETES
+    value: se-gke-cluster
