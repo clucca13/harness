@@ -51,6 +51,15 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 300000
+    - type: ARTIFACT_COLLECTION
+      name: Artifact Collection_2
+      properties:
+        artifactStreamName: library_nginx
+        buildNo: ${context.buildno.generick8BuildNo}
+        entityType: SERVICE
+        regex: false
+        serviceName: generic-k8
+        timeoutMillis: 300000
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
