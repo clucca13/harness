@@ -28,8 +28,8 @@ phases:
         outputVars: ''
         publishAsVar: true
         scriptString: |
-          nginxBuildNo=1.20.0-perl
-          generick8BuildNo=1.20.0
+          export nginxBuildNo=1.20.0-perl
+          export generick8BuildNo=1.20.0
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: buildno
